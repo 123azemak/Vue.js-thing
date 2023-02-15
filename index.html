@@ -11,14 +11,25 @@
 <body>
     <h1>pee pee poo poo</h1>
     <div id="app">
-        <p>{{ title }}</p>
+        <!-- <p>{{ title }}</p>
         <p>{{ author }}</p>
-        <p>{{ age }}</p>
+        <p>{{ age }}</p> -->
+          <div v-if="showBooks"><p>{{ title }} - {{ author }} - {{ age }}</p></div>
         <!-- button has a directive on it -->
-        <button v-on:click="age++">increase age</button>
+        <button @click="toggleShowBooks"><span v-if="showBooks">Hide Books</span>
+            <!-- <span v-if="!showBooks">Show Books</span></button> -->
+                 <span v-else>Show Books</span></button>
+
+
+
+<div v-show="showBooks">currently showing words</div>
+<!-- v-show and v-if have similar effects, but when v-if is toggled off, it gets deleted and re-added into the actual code, while v-show doesn't delete anything, it just sets its visibility to none in css -->
+
+        <!-- <button v-on:click="age++">increase age</button>
         <button v-on:click="age--">decrease age</button>
-        <div @click="title = 'womp'">new title</div>
-        <!-- <p>{{ title }} - {{ author }} - {{ age }}</p> -->
+        <div @click="changeTitle('The Final Shape')">new title</div> -->
+        <!-- @click and v-on:click are the same thing, just differnt ways to type it -->
+    
     </div>
 </body>
 <script src="index.js"></script>
