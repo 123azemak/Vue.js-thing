@@ -9,7 +9,7 @@ data() {
         // x: 0,
         // y: 0
         books : [
-            {title: 'whos is this guy', author: 'Mister gaddy', img: 'MISTERGADDY.png', isSpooky: false},
+            {title: 'whos is this guy', author: 'Mister gaddy', img: 'MISTERGADDY.png', isSpooky: true},
             {title: 'oh my god is that', author: 'its tater todd', img: 'TATERTODD.png', isSpooky: true},
             {title: 'bald?', author: 'mr vona', img: 'VONAQUEST.png', isSpooky: true}
         ]
@@ -27,6 +27,7 @@ book.isSpooky = !book.isSpooky;
             return this.books.filter((book) => book.isSpooky)
         }
     }
+    // i did the video but its not working for some reason oops
 //     handleEvent(e, data){
 //         console.log(e, e.type);
 //         if (data) {
