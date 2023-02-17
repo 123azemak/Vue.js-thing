@@ -8,13 +8,40 @@
     <link rel="stylesheet" src="main.css" href="main.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <style>
-        .box{
+        /* .box{
             padding: 100px 0;
             width: 400px;
             text-align: center;
             background: #ddd;
             margin: 20px;
             display: inline-block;
+        } */
+        img{
+            height: 158px;
+            width: 105px;
+        }
+        body{
+            background: #97F9F9;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+        p, h3, ul{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style-type: none;
+            background: #A4DEF9;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        li.spooky{
+            background: #C59FC9;
+
         }
     </style>
 </head>
@@ -27,8 +54,10 @@
         <p>{{ author }}</p>
         <p>{{ age }}</p> -->
           <div v-if="showBooks">
-            <img :src="book.img" :alt="book.title">
-            <ul><li v-for="book in books"><h3>{{ book.title }}</h3> <p>{{ book.author }}</p></li></ul>
+            
+            <ul>
+                <li v-for="book in filteredBooks" v-bind:class="{ spooky: book.isSpooky }" @click="toggleSpooky(book)"><img :src="book.img" :alt="book.title"><h3>{{ book.title }}</h3> <p>{{ book.author }}</p></li>
+            </ul>
           </div>
 
         <!-- button has a directive on it -->

@@ -9,9 +9,9 @@ data() {
         // x: 0,
         // y: 0
         books : [
-            {title: 'eeby deeby', author: 'brandon lu' img: ''},
-            {title: 'eeby deeby', author: 'brandon lu' img: ''},
-            {title: 'eeby deeby', author: 'brandon lu' img: ''}
+            {title: 'whos is this guy', author: 'Mister gaddy', img: 'MISTERGADDY.png', isSpooky: false},
+            {title: 'oh my god is that', author: 'its tater todd', img: 'TATERTODD.png', isSpooky: true},
+            {title: 'bald?', author: 'mr vona', img: 'VONAQUEST.png', isSpooky: true}
         ]
     }
 },
@@ -19,6 +19,14 @@ methods: {
     toggleShowBooks(){
         this.showBooks = !this.showBooks;
     },
+    toggleSpooky(book) {
+book.isSpooky = !book.isSpooky;
+    },
+    computed: {
+        filteredBooks(){
+            return this.books.filter((book) => book.isSpooky)
+        }
+    }
 //     handleEvent(e, data){
 //         console.log(e, e.type);
 //         if (data) {
