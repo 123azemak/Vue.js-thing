@@ -56,10 +56,10 @@
           <div v-if="showBooks">
             
             <ul>
-                <li v-for="book in filteredBooks" v-bind:class="{ spooky: book.isSpooky }" @click="toggleSpooky(book)"><img :src="book.img" :alt="book.title"><h3>{{ book.title }}</h3> <p>{{ book.author }}</p></li>
-            </ul>
+                <li v-for="book in books" v-bind:class="{ spooky: book.isSpooky }" @click="toggleSpooky(book)"><img :src="book.img" :alt="book.title"><h3>{{ book.title }}</h3> <p>{{ book.author }}</p></li>
+                </ul>
           </div>
-
+ <!-- replaced "book in filteredBooks" back to "book in books" because it doesnt work if i do filtered books -->
         <!-- button has a directive on it -->
         <button @click="toggleShowBooks"><span v-if="showBooks">Hide Books</span>
             <!-- <span v-if="!showBooks">Show Books</span></button> -->
